@@ -5,7 +5,7 @@ type NinkProps = {
 	title: string;
 	href: string;
 	className?: string;
-	as?: string;
+	hrefAs?: string;
 	disabled?: boolean;
 	plain?: boolean;
 	newTab?: boolean;
@@ -17,7 +17,7 @@ const Anchor: FC<NinkProps> = ({
 	children,
 	title,
 	href,
-	as = '',
+	hrefAs = '',
 	plain = false,
 	newTab = false,
 }): ReactElement => {
@@ -37,12 +37,12 @@ const Anchor: FC<NinkProps> = ({
 		);
 	}
 
-	if (as === '') {
-		as = href;
+	if (hrefAs === '') {
+		hrefAs = href;
 	}
 
 	const nextLinkTarget = href;
-	const nextLinkAs = as;
+	const nextLinkAs = hrefAs;
 
 	let rel = '';
 	let target = '';
