@@ -1,6 +1,6 @@
 {
 	"name": "nink",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"description": "An enhanced link component for Next.js.",
 	"main": "build/index.js",
 	"module": "build/index.es.js",
@@ -10,7 +10,7 @@
 		"test": "jest",
 		"lint": "tsc --noEmit && eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
 		"prepare": "yarn test && yarn lint && yarn build",
-		"postpublish": "git add . && PACKAGE_VERSION=$(cat package.json | grep \\\"version\\\" | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && git tag v$PACKAGE_VERSION && git push --tags"
+		"postpublish": "PACKAGE_VERSION=$(cat package.json | grep \\\"version\\\" | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && git tag v$PACKAGE_VERSION && git push --tags"
 	},
 	"repository": {
 		"type": "git",

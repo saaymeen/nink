@@ -24,7 +24,7 @@ const Anchor: FC<NinkProps> = ({
 	if (disabled) {
 		return (
 			<a title={title} className={className}>
-				{children ? children : name}
+				{children ? children : title}
 			</a>
 		);
 	}
@@ -32,7 +32,7 @@ const Anchor: FC<NinkProps> = ({
 	if (plain) {
 		return (
 			<a title={title} className={className} href={href}>
-				{children ? children : name}
+				{children ? children : title}
 			</a>
 		);
 	}
@@ -54,7 +54,7 @@ const Anchor: FC<NinkProps> = ({
 	return (
 		<Link href={nextLinkTarget} as={nextLinkAs}>
 			<a title={title} className={className} rel={rel} target={target}>
-				{children ? children : name}
+				{children ? children : title}
 			</a>
 		</Link>
 	);

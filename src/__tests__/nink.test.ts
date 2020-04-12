@@ -1,3 +1,3 @@
 test('This is just a placeholder, return anything', () => {
-	expect('anything').toBe('anything');
+	expect(1 + 3).toBe(4);
 });
