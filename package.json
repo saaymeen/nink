@@ -1,6 +1,6 @@
 {
 	"name": "nink",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"description": "An enhanced link component for Next.js.",
 	"main": "build/index.js",
 	"module": "build/index.es.js",
