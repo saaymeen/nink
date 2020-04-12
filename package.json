@@ -1,0 +1,70 @@
+{
+	"name": "nink",
+	"version": "0.0.2",
+	"description": "An enhanced link component for Next.js.",
+	"main": "build/index.js",
+	"module": "build/index.es.js",
+	"jsnext:main": "build/index.es.js",
+	"scripts": {
+		"build": "rollup -c",
+		"test": "jest",
+		"lint": "tsc --noEmit && eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
+		"prepare": "yarn test && yarn lint && yarn build",
+		"postpublish": "git add . && PACKAGE_VERSION=$(cat package.json | grep \\\"version\\\" | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && git tag v$PACKAGE_VERSION && git push --tags"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/saaymeen/nink.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/saaymeen/nink/issues"
+	},
+	"homepage": "https://github.com/saaymeen/nink#readme",
+	"devDependencies": {
+		"@babel/cli": "^7.8.4",
+		"@babel/core": "^7.9.0",
+		"@babel/preset-env": "^7.9.5",
+		"@babel/preset-react": "^7.9.4",
+		"@types/jest": "^25.2.1",
+		"@types/next": "^9.0.0",
+		"@types/node": "^13.11.1",
+		"@types/react": "^16.9.34",
+		"@types/react-dom": "^16.9.6",
+		"@types/react-test-renderer": "^16.9.2",
+		"@typescript-eslint/eslint-plugin": "^2.27.0",
+		"@typescript-eslint/parser": "^2.27.0",
+		"eslint": "^6.8.0",
+		"eslint-config-prettier": "^6.10.1",
+		"eslint-plugin-prettier": "^3.1.2",
+		"eslint-plugin-react": "^7.19.0",
+		"jest": "^25.3.0",
+		"next": "^9.3.4",
+		"prettier": "^2.0.4",
+		"react": "^16.13.1",
+		"react-dom": "^16.13.1",
+		"react-scripts-ts": "^3.1.0",
+		"react-test-renderer": "^16.13.1",
+		"rollup": "^2.6.0",
+		"rollup-plugin-commonjs": "^10.1.0",
+		"rollup-plugin-node-resolve": "^5.2.0",
+		"rollup-plugin-peer-deps-external": "^2.2.2",
+		"rollup-plugin-typescript2": "^0.27.0",
+		"ts-jest": "^25.3.1",
+		"typescript": "^3.8.3"
+	},
+	"peerDependencies": {
+		"next": "^9.3.4",
+		"react": "^16.13.1",
+		"react-dom": "^16.13.1"
+	},
+	"jest": {
+		"preset": "ts-jest",
+		"testEnvironment": "node"
+	},
+	"files": [
+		"build"
+	]
+}
